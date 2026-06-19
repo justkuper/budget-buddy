@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
 import { useAuth } from '../../contexts/AuthContext'
 import { useData } from '../../contexts/DataContext'
+import { usePlaid } from '../../contexts/PlaidContext'
 import TopBar from '../../components/Layout/TopBar'
 import TransactionSheet from '../../components/Transactions/TransactionSheet'
 import './Dashboard.css'
@@ -32,6 +33,7 @@ export default function DashboardPage() {
   const { t } = useTranslation()
   const { user } = useAuth()
   const { transactions, categories, monthlyIncome, monthlyExpenses, spendingByCategory } = useData()
+  const { allAccounts, totalBankBalance, items } = usePlaid()
   const navigate = useNavigate()
   const [showAdd, setShowAdd] = useState(false)
 
@@ -77,6 +79,26 @@ export default function DashboardPage() {
             </div>
           </div>
         </div>
+
+        {/* Linked Bank Accounts strip */}
+        {allAccounts.length > 0 && (
+          <div
+            className="card"
+            style={{marginTop: 16, cursor: 'pointer', display:'flex', alignItems:'center', gap:12, padding:'14px 16px'}}
+            onClick={() => navigate('/linked-accounts')}
+          >
+            <span style={{fontSize:'1.4rem'}}>🏦</span>
+            <div style={{flex:1}}>
+              <p style={{fontWeight:700, fontSize:'0.9rem'}}>{t('linkedAccounts')}</p>
+              <p style={{fontSize:'0.78rem', color:'var(--text-muted)'}}>{allAccounts.length} {t('accountsLinked')}</p>
+            </div>
+            <div style={{textAlign:'right'}}>
+              <p style={{fontWeight:800, color:'var(--income)', fontSize:'1rem'}}>{formatCurrency(totalBankBalance)}</p>
+              <p style={{fontSize:'0.7rem', color:'var(--text-muted)'}}>{t('totalBankBalance')}</p>
+            </div>
+            <span style={{color:'var(--text-muted)'}}>›</span>
+          </div>
+        )}
 
         {/* Spending by Category Donut */}
         {pieData.length > 0 && (

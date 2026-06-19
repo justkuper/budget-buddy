@@ -125,6 +125,22 @@ export default {
     security: 'Security',
     notifications: 'Notifications',
 
+    // Plaid / Bank Linking
+    linkedAccounts: 'Linked Accounts',
+    linkBankAccount: 'Link Bank Account',
+    addAnotherBank: 'Add Another Bank',
+    noAccountsLinked: 'No accounts linked yet',
+    linkAccountDesc: 'Connect your bank to automatically import transactions and see real balances.',
+    totalBankBalance: 'Total Bank Balance',
+    accountsLinked: 'accounts linked',
+    banks: 'banks',
+    sync: 'Sync',
+    unlink: 'Unlink',
+    lastUpdated: 'Updated',
+    available: 'Available',
+    balance: 'Balance',
+    plaidSecurityNote: 'Your credentials are never stored. Powered by Plaid — the same technology trusted by thousands of apps.',
+
     // Common
     loading: 'Loading...',
     error: 'Something went wrong',

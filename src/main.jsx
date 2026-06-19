@@ -5,6 +5,7 @@ import './styles/global.css'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { AuthProvider } from './contexts/AuthContext'
 import { DataProvider } from './contexts/DataContext'
+import { PlaidProvider } from './contexts/PlaidContext'
 import App from './App'
 
 // Optional: configure AWS Amplify for production
@@ -17,7 +18,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider>
       <AuthProvider>
         <DataProvider>
-          <App />
+          <PlaidProvider>
+            <App />
+          </PlaidProvider>
         </DataProvider>
       </AuthProvider>
     </ThemeProvider>

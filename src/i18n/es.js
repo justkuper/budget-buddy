@@ -125,6 +125,22 @@ export default {
     security: 'Seguridad',
     notifications: 'Notificaciones',
 
+    // Plaid / Cuentas Bancarias
+    linkedAccounts: 'Cuentas Vinculadas',
+    linkBankAccount: 'Vincular Cuenta Bancaria',
+    addAnotherBank: 'Agregar Otro Banco',
+    noAccountsLinked: 'Sin cuentas vinculadas aún',
+    linkAccountDesc: 'Conecta tu banco para importar transacciones automáticamente y ver saldos reales.',
+    totalBankBalance: 'Saldo Bancario Total',
+    accountsLinked: 'cuentas vinculadas',
+    banks: 'bancos',
+    sync: 'Sincronizar',
+    unlink: 'Desvincular',
+    lastUpdated: 'Actualizado',
+    available: 'Disponible',
+    balance: 'Saldo',
+    plaidSecurityNote: 'Tus credenciales nunca se almacenan. Impulsado por Plaid — la misma tecnología de confianza de miles de aplicaciones.',
+
     // Common
     loading: 'Cargando...',
     error: 'Algo salió mal',

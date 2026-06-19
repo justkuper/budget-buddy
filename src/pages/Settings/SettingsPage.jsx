@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { useTheme } from '../../contexts/ThemeContext'
 import { useAuth } from '../../contexts/AuthContext'
-import { useNavigate } from 'react-router-dom'
+import { usePlaid } from '../../contexts/PlaidContext'
+import { useNavigate, Link } from 'react-router-dom'
 import TopBar from '../../components/Layout/TopBar'
 
 function SettingRow({ icon, label, children, danger }) {
@@ -23,6 +24,7 @@ export default function SettingsPage() {
   const { t, i18n } = useTranslation()
   const { isDark, toggleTheme } = useTheme()
   const { user, signOut } = useAuth()
+  const { items, allAccounts } = usePlaid()
   const navigate = useNavigate()
 
   const handleSignOut = () => {
@@ -95,6 +97,22 @@ export default function SettingsPage() {
 
           <SettingRow icon="💵" label={t('currency')}>
             <span style={{color:'var(--text-secondary)', fontWeight:600}}>USD $</span>
+          </SettingRow>
+        </div>
+
+        {/* Bank Accounts */}
+        <div className="card" style={{marginTop:16}}>
+          <SettingRow icon="🏦" label={t('linkedAccounts')}>
+            <Link
+              to="/linked-accounts"
+              style={{
+                display:'inline-flex', alignItems:'center', gap:6,
+                padding:'6px 14px', borderRadius:8, background:'var(--primary)',
+                color:'white', fontWeight:600, fontSize:'0.85rem', textDecoration:'none',
+              }}
+            >
+              {allAccounts.length > 0 ? `${allAccounts.length} connected` : 'Connect'} →
+            </Link>
           </SettingRow>
         </div>
 

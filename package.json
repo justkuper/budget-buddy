@@ -19,7 +19,8 @@
     "react-i18next": "^15.0.2",
     "i18next-browser-languagedetector": "^8.0.0",
     "date-fns": "^3.6.0",
-    "uuid": "^10.0.0"
+    "uuid": "^10.0.0",
+    "react-plaid-link": "^3.5.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
