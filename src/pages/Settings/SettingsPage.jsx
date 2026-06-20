@@ -90,7 +90,7 @@ export default function SettingsPage() {
           </SettingRow>
 
           <SettingRow icon="🔐" label="Two-Factor Auth">
-            <button className="btn btn-secondary" style={{padding:'6px 14px', fontSize:'0.85rem'}} onClick={() => navigate('/auth/2fa')}>
+            <button className="btn btn-secondary" style={{padding:'6px 14px', fontSize:'0.85rem'}} onClick={() => navigate('/auth/2fa-setup')}>
               {t('setupTwoFactor')}
             </button>
           </SettingRow>
