@@ -1,0 +1,8 @@
+{
+  "name": "budget-buddy-functions",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "plaid": "^42.2.0"
+  }
+}

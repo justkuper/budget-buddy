@@ -1,0 +1,133 @@
+.dashboard { flex: 1; display: flex; flex-direction: column; }
+
+.greeting {
+  padding: 16px 0 4px;
+}
+.greeting-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.balance-card {
+  margin-top: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.balance-card::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 140px; height: 140px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+}
+.balance-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 4px;
+}
+.balance-amount {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 20px;
+}
+.balance-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.balance-stat {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.balance-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.3);
+}
+.stat-icon {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.stat-icon.income  { background: rgba(0,200,150,0.3); color: #7FFFDA; }
+.stat-icon.expense { background: rgba(255,107,107,0.3); color: #FFB8B8; }
+.stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.65); }
+.stat-value { font-size: 0.95rem; font-weight: 700; color: white; }
+
+/* Chart */
+.chart-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chart-legend {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8rem;
+}
+.legend-name {
+  flex: 1;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.legend-value {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.78rem;
+}
+
+/* Transaction rows */
+.tx-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+}
+.tx-row-border {
+  border-bottom: 1px solid var(--border);
+}
+.tx-icon {
+  width: 44px; height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.tx-info { flex: 1; min-width: 0; }
+.tx-desc {
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tx-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.tx-amount {
+  font-weight: 700;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
